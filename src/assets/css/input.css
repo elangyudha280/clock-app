@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .App{
+        @apply overflow-hidden m-0 box-border p-0 border-none relative;
+    }
+}
+

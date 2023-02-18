@@ -10,8 +10,8 @@ module.exports = {
         'inter':["'Inter'",'sans-serif']
       },
       colors:{
-        'custom1':'#050201',
-        'custom2':'#050505'
+        'custom1':'rgb(5, 2, 1)',
+        'custom2':'rgb(5, 5, 5)'
       }
     },
   },
