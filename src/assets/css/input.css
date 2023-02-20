@@ -8,7 +8,17 @@
     }
 
     .main-content{
-        @apply relative w-full h-[100vh] bg-no-repeat bg-cover bg-center lg:scale-[1.01] ;
+        @apply relative w-full h-[100vh] bg-no-repeat bg-cover bg-center  lg:bg-center px-5 py-[50px] lg:scale-[1.01] overflow-hidden;
+        
+    }
+
+    .container-clock{
+        position:relative;
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
     }
 }
 
