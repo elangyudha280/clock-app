@@ -5,12 +5,12 @@ import iconRandomQuote from '../images/icon-refresh.svg'
 
 const ContainerClock = ()=>{
     return(
-        <section className="container-clock border-2 border-red-600">
+        <section className="container-clock ">
             {/* container quotes */}
             <section className="container-quotes w-full h-[100%]  flex-1">
                 <div className="quotes max-w-xl  flex gap-2">
-                    <div className="description-quotes flex-1 leading-[1.3em]">
-                        <p className="text-white text-[0.8em] md:text-[1em] ">
+                    <div className="description-quotes flex-1 leading-[1.7em]">
+                        <p className="text-white text-[0.8em] md:text-[1.1em] ">
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus officia esse voluptates quibusdam id dolores reiciendis blanditiis quia in."
                         </p>
                         <h3 className="quote character text-white font-bold text-xl capitalize mt-3">jon doe</h3>
