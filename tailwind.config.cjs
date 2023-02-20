@@ -11,7 +11,8 @@ module.exports = {
       },
       colors:{
         'custom1':'rgb(5, 2, 1)',
-        'custom2':'rgb(5, 5, 5)'
+        'custom2':'rgb(5, 5, 5)',
+        'circle-btn-more':'hsl(0, 0%, 19%)'
       }
     },
   },
