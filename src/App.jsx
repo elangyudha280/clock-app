@@ -1,7 +1,7 @@
  
 
 // Import Component Clock
-import ContainerClock from "./component/ContainerClock"
+import ContainerClock from "./component/ContainerClock";
 
 
 function App() {
