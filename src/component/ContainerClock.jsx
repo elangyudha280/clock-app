@@ -39,7 +39,7 @@ const ContainerClock = ()=>{
                 </div>
                 <button className="btn-more  h-[45px] rounded-full self-end gap-1 py-2 px-2 bg-white flex items-center justify-evenly uppercase tracking-[2px] text-black/70">
                     more
-                    <img src={iconMore} alt="" className="h-full w-[30px] rounded-full" />
+                    <img src={iconMore} alt="" className="h-full w-[30px] rounded-full transition-all duration-200 rotate-[180deg]" />
                 </button>
             </section>
         </section>
