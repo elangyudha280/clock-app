@@ -13,6 +13,9 @@ module.exports = {
         'custom1':'rgb(5, 2, 1)',
         'custom2':'rgb(5, 5, 5)',
         'circle-btn-more':'hsl(0, 0%, 19%)'
+      },
+      screens:{
+        'xs':'520px'
       }
     },
   },
