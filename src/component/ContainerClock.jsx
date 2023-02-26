@@ -14,7 +14,7 @@ import iconMore from '../assets/images/icon-arrow-up.svg'
 
 const ContainerClock = ()=>{
     return(
-        <section className="container-clock border-2 border-red-600 ">
+        <section className="container-clock ">
             {/* container quotes */}
             <Quotes/>
             <section className="clock  w-full h-auto flex flex-col gap-3 md:flex-row">
@@ -23,7 +23,7 @@ const ContainerClock = ()=>{
                         <div className="bg-icon-clock w-[22px] h-[22px] bg-[url(../images/icon-sun.svg)] bg-center bg-cover bg-no-repeat">
 
                         </div>
-                        <h3 className="title-nav-clock tracking-[4px] font-[400] text-white uppercase text-sm md:text-lg">
+                        <h3 className="title-nav-clock tracking-[4px] font-[400] text-white uppercase text-sm md:text-[0.9em]">
                             good morning, <span className="max-[410px]:hidden">it's currently</span>
                         </h3>
                     </nav>

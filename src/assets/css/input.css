@@ -4,11 +4,11 @@
 
 @layer components {
     .App{
-        @apply overflow-hidden m-0 box-border p-0 border-none relative;
+        @apply  m-0 box-border p-0 border-none relative w-full h-[100vh] overflow-y-auto overflow-x-hidden bg-no-repeat bg-cover bg-center  lg:bg-center;
     }
 
     .main-content{
-        @apply relative w-full h-[100vh] bg-no-repeat bg-cover bg-center  lg:bg-center px-3 py-[30px] md:px-8 md:py-[50px] lg:scale-[1.01] overflow-hidden;
+        @apply relative w-full h-full  px-3 py-[30px] md:px-8 md:py-[50px] lg:scale-[1.01];
         
     }
 
@@ -19,6 +19,11 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+    }
+    .navigation-zone{
+        background: rgba( 255, 255, 255, 0.7 );
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px )
     }
 }
 
