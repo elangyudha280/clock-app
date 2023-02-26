@@ -14,7 +14,7 @@ import iconMore from '../assets/images/icon-arrow-up.svg'
 
 const ContainerClock = ()=>{
     return(
-        <section className="container-clock ">
+        <section className="container-clock border-2 border-red-600 ">
             {/* container quotes */}
             <Quotes/>
             <section className="clock  w-full h-auto flex flex-col gap-3 md:flex-row">
@@ -23,15 +23,15 @@ const ContainerClock = ()=>{
                         <div className="bg-icon-clock w-[22px] h-[22px] bg-[url(../images/icon-sun.svg)] bg-center bg-cover bg-no-repeat">
 
                         </div>
-                        <h3 className="title-nav-clock tracking-[4px] font-[400] text-white uppercase text-sm xs:text-lg">
+                        <h3 className="title-nav-clock tracking-[4px] font-[400] text-white uppercase text-sm md:text-lg">
                             good morning, <span className="max-[410px]:hidden">it's currently</span>
                         </h3>
                     </nav>
-                    <section className="time-now select-none relative max-w-lg z-1 xs:my-[-30px] items-center gap-2  flex ">
-                        <h2 className="title-time-now  inline py-2 h-full text-white  justify-self-center  font-[800] text-[5em] xs:text-[10em]">
+                    <section className="time-now select-none relative max-w-lg z-1 my-[-20px] md:my-[-30px] items-center gap-2  flex ">
+                        <h2 className="title-time-now  inline py-2 h-full text-white  justify-self-center  font-[800] text-[5em] md:text-[10em]">
                             11:37
                         </h2>
-                        <h3 className="standar-time uppercase text-3xl relative top-[-30px] xs:top-[-55px] text-white self-end flex-1">
+                        <h3 className="standar-time uppercase text-3xl relative top-[-30px] md:top-[-55px] text-white self-end flex-1">
                             am
                         </h3>
                     </section>
