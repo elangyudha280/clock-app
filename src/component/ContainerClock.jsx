@@ -16,9 +16,6 @@ const ContainerClock = ()=>{
 
     let {zoneState,dispatchZone} = useContext(zoneContext);
 
-    useEffect(()=>{
-        console.log(zoneState)
-    })
 
     return(
         <section className="container-clock ">
