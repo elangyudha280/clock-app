@@ -1,11 +1,11 @@
-import React from "react";
-
+import React,{useContext,useEffect} from "react";
+import zoneContext from "../Context/ZoneContext.mjs";
 // component quotes
 import Quotes from "./componentContainerClock/Quotes";
 
 
 // icon sun clock
-import iconSunClock from '../assets/images/icon-sun.svg'
+// import iconSunClock from '../assets/images/icon-sun.svg'
 
 
 // img icon bt more
@@ -13,6 +13,13 @@ import iconMore from '../assets/images/icon-arrow-up.svg'
 
 
 const ContainerClock = ()=>{
+
+    let {zoneState,dispatchZone} = useContext(zoneContext);
+
+    useEffect(()=>{
+        console.log(zoneState)
+    })
+
     return(
         <section className="container-clock ">
             {/* container quotes */}
@@ -39,9 +46,9 @@ const ContainerClock = ()=>{
                         in <span>london uk</span>
                     </h3>
                 </div>
-                <button className="btn-more w-[120px]  h-[45px] rounded-full   gap-1 p-[6px] xs:px-2 bg-white flex items-center justify-evenly uppercase tracking-[2px] text-black/70 md:self-end md:w-auto">
+                <button onClick={()=>{dispatchZone({type:'toggleZone'})}} className="btn-more w-[120px]  h-[45px] rounded-full   gap-1 p-[6px] xs:px-2 bg-white flex items-center justify-evenly uppercase tracking-[2px] text-black/70 md:self-end md:w-auto">
                     more
-                    <img src={iconMore} alt="" className="h-full w-[33px] overflow-hidden rounded-full transition-all duration-200 " />
+                    <img src={iconMore} alt="" className={`h-full w-[33px] overflow-hidden rounded-full transition-all duration-200 ${zoneState.toggleZone && 'rotate-[180deg]'}`}  />
                     {/* rotate-[180deg] */}
                 </button>
             </section>
