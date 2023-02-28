@@ -1,9 +1,15 @@
 
+import { useState,useEffect } from 'react';
 
 // import icon refresh quotes
 import iconRandomQuote from '../../assets/images/icon-refresh.svg'
 
 const Quotes = ()=>{
+
+
+    // state data quotes
+    let  [quotes,setQuotes] = useState([])
+
     return (
         <section className="container-quotes w-full h-[100%]  flex-1">
             <div className="quotes max-w-xl  flex gap-2">
