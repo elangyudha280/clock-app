@@ -44,9 +44,8 @@ const ContainerClock = ()=>{
                     </h3>
                 </div>
                 <button onClick={()=>{dispatchZone({type:'toggleZone'})}} className="btn-more w-[120px]  h-[45px] rounded-full   gap-1 p-[6px] xs:px-2 bg-white flex items-center justify-evenly uppercase tracking-[2px] text-black/70 md:self-end md:w-auto">
-                    more
+                    {(zoneState.toggleZone) ? 'less' : 'more'}
                     <img src={iconMore} alt="" className={`h-full w-[33px] overflow-hidden rounded-full transition-all duration-200 ${zoneState.toggleZone && 'rotate-[180deg]'}`}  />
-                    {/* rotate-[180deg] */}
                 </button>
             </section>
         </section>

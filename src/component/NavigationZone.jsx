@@ -2,6 +2,29 @@ import { useEffect,useState } from "react";
 
 
 const NavigationZone = ()=>{
+
+    // state zone 
+    let [zone,setZone] = useState(null);
+
+    useEffect(()=>{
+        // get data zone
+        fetch('https://worldtimeapi.org/api/ip',{
+            method:'get'
+        }).then(Response =>{
+            if(!Response.ok){
+                console.log(Response.status)
+                throw new Error('opps.. something wrong')
+            }
+
+            return Response.json()
+        })
+        .then(dataZone =>{
+            setZone(dataZone)
+        })
+        .catch(err => console.log(err))
+
+    },[])
+
     return (
         <section className="navigation-zone w-full h-auto relative px-3 md:px-8 py-[3em]  ">
             <div className="navigation-container relative max-w-[1090px] gap-y-5  h-auto mx-auto grid md:grid-cols-2 auto-rows-auto md:gap-y-0">
@@ -11,7 +34,9 @@ const NavigationZone = ()=>{
                             current time zone
                         </h4>       
                         <h1 className="current capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl  ">
-                            europe/London
+                            {
+                            zone === null ? 'europe/London' : zone.timezone
+                            } 
                         </h1>
                     </div>
                 </div>
@@ -21,7 +46,9 @@ const NavigationZone = ()=>{
                             days of the week
                         </h4>       
                         <h1 className="week capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl ">
-                            0
+                            {
+                                zone === null ? '0' : zone.day_of_week
+                            }
                         </h1>
                     </div>
                 </div>
@@ -31,7 +58,9 @@ const NavigationZone = ()=>{
                             days of the year
                         </h4>       
                         <h1 className="year capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl">
-                            57
+                            {
+                                zone === null ? '57' : zone.day_of_year
+                            }
                         </h1>
                    </div>
                 </div>
@@ -41,7 +70,9 @@ const NavigationZone = ()=>{
                             week number
                         </h4>       
                         <h1 className="year capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl">
-                            8
+                        {
+                                zone === null ? '8' : zone.week_number
+                            }
                         </h1>
                      </div>
                 </div>
