@@ -12,7 +12,6 @@ const NavigationZone = ()=>{
             method:'get'
         }).then(Response =>{
             if(!Response.ok){
-                console.log(Response.status)
                 throw new Error('opps.. something wrong')
             }
 
