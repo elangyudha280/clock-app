@@ -1,10 +1,12 @@
-import { useEffect,useState } from "react";
-
+import { useEffect,useState,useContext } from "react";
+import zoneContext from "../Context/ZoneContext.mjs";
 
 const NavigationZone = ()=>{
 
-    // state zone 
-    let [zone,setZone] = useState(null);
+    // context zone
+    let {zoneState,dispatchZone} = useContext(zoneContext)
+
+  
 
     useEffect(()=>{
         // get data zone
@@ -18,11 +20,14 @@ const NavigationZone = ()=>{
             return Response.json()
         })
         .then(dataZone =>{
-            setZone(dataZone)
+            dispatchZone({
+                type:'getDataZone',
+                payload:dataZone
+            })
         })
         .catch(err => console.log(err))
 
-    },[])
+    },[zoneState.dataZone])
 
     return (
         <section className="navigation-zone w-full h-auto relative px-3 md:px-8 py-[3em]  ">
@@ -34,7 +39,7 @@ const NavigationZone = ()=>{
                         </h4>       
                         <h1 className="current capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl  ">
                             {
-                            zone === null ? 'europe/London' : zone.timezone
+                            zoneState.dataZone === null ? 'europe/London' : zoneState.dataZone.timezone
                             } 
                         </h1>
                     </div>
@@ -46,7 +51,7 @@ const NavigationZone = ()=>{
                         </h4>       
                         <h1 className="week capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl ">
                             {
-                                zone === null ? '0' : zone.day_of_week
+                                zoneState.dataZone === null ? '0' : zoneState.dataZone.day_of_week
                             }
                         </h1>
                     </div>
@@ -58,7 +63,7 @@ const NavigationZone = ()=>{
                         </h4>       
                         <h1 className="year capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl">
                             {
-                                zone === null ? '57' : zone.day_of_year
+                                zoneState.dataZone === null ? '57' : zoneState.dataZone.day_of_year
                             }
                         </h1>
                    </div>
@@ -70,7 +75,7 @@ const NavigationZone = ()=>{
                         </h4>       
                         <h1 className="year capitalize truncate font-semibold text-slate-800 min-[330px]:text-xl  md:text-4xl">
                         {
-                                zone === null ? '8' : zone.week_number
+                                zoneState.dataZone === null ? '8' : zoneState.dataZone.week_number
                             }
                         </h1>
                      </div>
