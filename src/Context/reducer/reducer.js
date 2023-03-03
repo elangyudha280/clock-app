@@ -7,6 +7,8 @@ function reducerZone(state={},action){
         return{...state,dataZone:action.payload}
         case 'toggleZone':
             return {...state,toggleZone:(state.toggleZone) ? false :true}
+        case 'getClockZone':
+            return {...state,clockZone:action.payload}
         default:
             break;
     }

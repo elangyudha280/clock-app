@@ -27,7 +27,7 @@ const NavigationZone = ()=>{
         })
         .catch(err => console.log(err))
 
-    },[zoneState.dataZone])
+    },[])
 
     return (
         <section className="navigation-zone w-full h-auto relative px-3 md:px-8 py-[3em]  ">

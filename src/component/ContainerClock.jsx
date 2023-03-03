@@ -17,6 +17,28 @@ const ContainerClock = ()=>{
     let {zoneState,dispatchZone} = useContext(zoneContext);
 
 
+    // get data clock zone
+    useEffect(()=>{
+        fetch('https://api.ipbase.com/v1/json?apikey=mxTmuF7ByTJGbfdKupbpBjfNjeSE43FmAux4wnGR',{
+            method:'get'
+        })
+        .then(Response =>{
+            if(!Response.ok){
+                throw new Error('oops.. something wrong')
+            }
+            return Response.json()
+        })
+        .then(dataClock =>{
+            dispatchZone({
+                type:'getClockZone',
+                payload:dataClock
+            })
+        })
+        .catch(err => err)
+
+
+    },[])
+
     return(
         <section className="container-clock ">
             {/* container quotes */}
@@ -40,7 +62,7 @@ const ContainerClock = ()=>{
                         </h3>
                     </section>
                     <h3 className="country uppercase text-white font-[600] tracking-[3px] text-lg" >
-                        in <span>london uk</span>
+                        in <span>{ zoneState.clockZone !== null ? `${zoneState.clockZone.country_name} ${zoneState.clockZone.country_code}` : 'London Uk' }</span>
                     </h3>
                 </div>
                 <button onClick={()=>{dispatchZone({type:'toggleZone'})}} className="btn-more w-[120px]  h-[45px] rounded-full   gap-1 p-[6px] xs:px-2 bg-white flex items-center justify-evenly uppercase tracking-[2px] text-black/70 md:self-end md:w-auto">
