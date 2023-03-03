@@ -13,6 +13,7 @@ import NavigationZone from "./component/NavigationZone";
 let initialState = {
   toggleZone:false,
   dataZone:null,
+  clockZone:null
 }
 
 function App() {
