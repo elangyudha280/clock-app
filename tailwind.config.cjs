@@ -12,7 +12,9 @@ module.exports = {
       colors:{
         'custom1':'rgb(5, 2, 1)',
         'custom2':'rgb(5, 5, 5)',
-        'circle-btn-more':'hsl(0, 0%, 19%)'
+        'circle-btn-more':'hsl(0, 0%, 19%)',
+        'navigation-zone-light':'rgba(255, 255, 255, 0.6)',
+        'navigation-zone-dark':'rgba(0, 0, 0, 0.6)'
       },
       screens:{
         'xs':'520px'
@@ -34,5 +36,6 @@ module.exports = {
       }
     },
   },
+  darkMode:'class',
   plugins: [],
 }

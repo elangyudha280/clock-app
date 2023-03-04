@@ -23,9 +23,10 @@
         flex-direction: column;
     }
     .navigation-zone{
-        background: rgba( 255, 255, 255, 0.7 );
-        backdrop-filter: blur( 2.5px );
-        -webkit-backdrop-filter: blur( 2.5px )
+        /* background:; */
+        @apply w-full h-auto relative px-3 md:px-8 py-[3em] backdrop-blur-[2.8px] ;
+        /* backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px ) */
     }
 }
 
